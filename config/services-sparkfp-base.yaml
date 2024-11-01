@@ -1,0 +1,17 @@
+parameters:
+  product.manager.slug: "%productsManager.sparkfp.slug%"
+  product.manager.title: "%productsManager.sparkfp.title%"
+  product.manager.description: "%productsManager.sparkfp.description%"
+  product.manager.shortcode: "%productsManager.sparkfp.shortcode%"
+
+services:
+  _instanceof:
+    Sparkfp\SparkPlugins\SparkWoo\Common\Modules\ModuleInterface:
+      tags: ["app.module"]
+  products-manager:
+    class: Sparkfp\SparkPlugins\SparkWoo\FeaturedProducts\FeaturedProductsManager
+    arguments:
+      $title: "%product.manager.title%"
+      $slug: "%product.manager.slug%"
+      $description: "%product.manager.description%"
+      $shortcode: "%product.manager.shortcode%"

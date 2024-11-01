@@ -1,0 +1,14 @@
+parameters:
+  plugin.prefix: "%plugin.sparkfp.prefix%"
+  plugin.slug: "%plugin.sparkfp.slug%"
+  plugin.version: "%plugin.sparkfp.version%"
+
+services:
+  plugin-meta: "@plugin-meta-fp"
+
+imports:
+  - { resource: services-common.yaml }
+  - { resource: services-common-free.yaml }
+  - { resource: services-product-recommendations.yaml }
+  - { resource: services-product-recommendations-free.yaml }
+  - { resource: services-sparkfp-base.yaml }
